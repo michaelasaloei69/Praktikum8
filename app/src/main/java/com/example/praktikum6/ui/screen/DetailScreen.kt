@@ -47,10 +47,16 @@ fun DetailScreen(
                 Text(uiState.errorMessage)
             uiState.student != null -> {
                 val student = uiState.student
+                student?.let { data ->
+                    Text(data.name, style = MaterialTheme.typography.headlineSmall)
+                    Text("Email: ${data.email}")
+                    Text("University: ${data.university}")
+                }
+
                 Text("ID: ${student.id}")
                 Text("Nama: ${student.name}")
-                Text("Program: ${student.program}")
-                Text("Angkatan: ${student.year}")
+//                Text("Program: ${student.program}")
+//                Text("Angkatan: ${student.year}")
             }
         }
         Button(onClick = onBack) {

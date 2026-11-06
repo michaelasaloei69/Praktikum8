@@ -5,5 +5,6 @@ import com.example.praktikum6.data.model.Student
 data class HomeUiState (
     val students: List<Student>? = null,
     val isLoading: Boolean = false,
-    val errorMessage: String? = null
+    val errorMessage: String? = null,
+    var searchQuery: String = ""
 )
